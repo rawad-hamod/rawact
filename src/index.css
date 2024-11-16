@@ -1,0 +1,6 @@
+@media (max-width:375px){
+    .todolist-container{
+        min-width: 95%;
+        padding: 2px;
+    }
+}

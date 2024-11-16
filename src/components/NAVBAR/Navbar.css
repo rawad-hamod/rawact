@@ -1,0 +1,34 @@
+.navbar{
+    background-color: aliceblue;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:5px;
+    position: relative;
+    margin: 10px auto;
+    border-radius: 5px;
+    height: 50px;
+}
+.logo{
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    left: 10%;
+    
+}
+.nav-list{
+    position: absolute;
+    right: 10%;
+}
+.nav-list ul .li {
+    display:inline-block;
+    margin-right: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none;
+}
+.nav-list ul .li:hover{
+    text-decoration: 2px underline solid #800080;
+}

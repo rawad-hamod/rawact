@@ -1,0 +1,79 @@
+.todolist-container{
+ width: 50%;
+ min-height: 500px;
+  background: #ffffff;
+  border-radius: 4px;
+   margin: 100px auto;
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  
+}
+.todolist-container button{
+    cursor:pointer;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 1.6px;
+}
+.todolist-container button:hover{
+    opacity: 0.9;
+}
+
+.todolist-container h1{
+    text-align: center;
+}
+.todolist-container .newtask{
+    width:100%;
+    padding:5px;
+    
+}
+.todolist-container .newtask input{
+    padding:10px;
+    width:80%;
+    margin-right: 5px;
+    border-radius:5px;
+}
+.todolist-container .newtask button{
+    background-color: green;
+    width:50px;
+    font-size: larger;
+    height: 50px;
+}
+.tasks{
+    padding: 5px;
+}
+.task{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap:10px;
+    margin-top: 10px;
+    padding: 10px;
+    max-width: 95%;
+    
+}
+.task.text{
+    font-size: 16px;
+    flex:1;
+    line-height: 1.6px;
+    overflow: wrap;
+    max-width: 80%;
+    text-wrap: wrap;
+    
+}
+.task p.done{
+    text-decoration: line-through;
+    color: grey;
+}
+.task button{
+background-color: rgb(224, 114, 114);
+}
+
+
+
+
