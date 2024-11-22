@@ -23,7 +23,7 @@
 }
 .nav-list ul .li {
     display:inline-block;
-    margin-right: 40px;
+    margin-right: 20px;
     font-size: 24px;
     cursor: pointer;
     transition: .3s;
@@ -31,4 +31,5 @@
 }
 .nav-list ul .li:hover{
     text-decoration: 2px underline solid #800080;
+    background-color: aqua;
 }

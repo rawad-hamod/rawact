@@ -84,7 +84,7 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
   return (
     <div className="magic-memory-container">
       <h1>Memory Game</h1>
-      <button onClick={shuffleCards}>New Game</button>
+      <button className="new-game-button" onClick={shuffleCards}>New Game</button>
       <div className="card-grid">
         {ended === false ? (
           <>

@@ -1,79 +1,148 @@
-import  { useState } from "react";
-import { quiz } from "../../assets/questions";
-import "./Quiz.css"
+import {  useEffect, useState } from "react";
+
+import "./Quiz.css";
+
 const Quiz = () => {
+
+  const[newGame , setNewGame]=useState(true)
   const [activeQuestion, setActiveQuestion] = useState(0);
-const [selectedAnswer,setSelectedAnswer]=useState("");
-const [selectedAnswerIndex,setSelectedAnswerIndex]=useState(null);
-const[result,setResult]=useState({
-    score:0,
-    correctAnswers:0,
-    wrongAnswers:0,
-});
-const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
-const[showResullt,setShowResult]=useState(false);
+  const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
+ 
+  const [quizQuestions, setQuizQuestions] = useState([]);
+  const [showResullt, setShowResult] = useState(false);
+  const [result, setResult] = useState({
+    score: 0,
+    correctAnswers: 0,
+    wrongAnswers: 0,
+  });
 
-
-  const { questions } = quiz;
-  const {  choices,correctAnswer } = questions[activeQuestion];
-
-
-  function onClickNext(){
-    setSelectedAnswerIndex(null);
-    console.log(activeQuestion);
-    setResult((prev)=> selectedAnswer?
-    {
-     ...prev,
-     score:prev.score+5,
-     correctAnswers:prev.correctAnswers+1,}
-     : {
-        ...prev,
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://opentdb.com/api.php?amount=10"); 
+        if (!response.ok) {
+          throw new Error('Failed to fetch quiz data');
+        }
+        const data = await response.json();
         
-        wrongAnswers:prev.wrongAnswers+1
-    });
-    if(activeQuestion!==questions.length-1){
-      setActiveQuestion((prev)=>prev+1)
-    }else{
-      setShowResult(true)
-    
+        
+        const filteredData = data.results.map((item) => ({
+          question: item.question,
+          correctAnswer: item.correct_answer,
+          incorrectAnswers: item.incorrect_answers,
+          answers: item.incorrect_answers.concat(item.correct_answer).sort(),
+         
+        }));
+        setQuizQuestions(filteredData);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    if(newGame){
+    fetchData();
+    setNewGame(false)
+  }
+  }, []);
+  
+  
+
+  const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
+
+  function onClickNext() {
+    setSelectedAnswerIndex(null);
+    setResult((prev) =>
+      selectedAnswer
+        ? {
+            ...prev,
+            score: prev.score + 5,
+            correctAnswers: prev.correctAnswers + 1,
+          }
+        : {
+            ...prev,
+
+            wrongAnswers: prev.wrongAnswers + 1,
+          }
+    );
+    if (activeQuestion !== quizQuestions.length - 1) {
+      setActiveQuestion((prev) => prev + 1);
+    } else {
+      setShowResult(true);
+      setActiveQuestion(0);
     }
   }
-function onAnswerClick(answer,index){
-  setSelectedAnswerIndex(index);
-  
-  
-    if(answer===correctAnswer){
-        setSelectedAnswer(true);
-    }else{
-        
-        setSelectedAnswer(false);
+  function onAnswerClick(a, b, c) {
+    setSelectedAnswerIndex(c);
+    if (a === b) {
+      setSelectedAnswer(true);
+    } else {
+      setSelectedAnswer(false);
     }
-    
-}
-  return (
-   
-    <div className="quiz-container">
- 
-    {!showResullt?  
-     (<>
-        <span className="active-question-no">{addLeadingZero(activeQuestion + 1)}</span>
-        <span className="total-question">/{addLeadingZero(questions.length)}</span>
-     
-      <h1>quiz</h1>
-      <p>{questions[activeQuestion].question}</p>
+  }
+  function startNewGame(){
+setShowResult(false);
+setResult({
+  score: 0,
+  correctAnswers: 0,
+  wrongAnswers: 0,
+})
+setNewGame(true)
 
-      <ul>
-        {choices.map((answer,index) => (
-          <li onClick={()=>onAnswerClick(answer,index)} key={index} className={index===selectedAnswerIndex?"selected-answer":null}>{answer} </li>
-        ))}
-      </ul>
-      <button onClick={onClickNext} disabled={selectedAnswerIndex === null}>{activeQuestion===questions.length-1?"finish":"next"}</button>
-      </>
-      ):(
+
+  }
+
+  return (
+    <div className="quiz-container">
+      {!showResullt ? (
+        quizQuestions.length > 1 ? (
+          <>
+            <span className="active-question-no">
+              {addLeadingZero(activeQuestion + 1)}
+            </span>
+            <span className="total-question">
+              /{addLeadingZero(quizQuestions.length)}
+            </span>
+
+            <h1>quiz</h1>
+
+            <p>{quizQuestions[activeQuestion].question}</p>
+            {
+              <ul>
+                {quizQuestions[activeQuestion].answers.map((answer, index) => (
+                  <li
+                    onClick={() =>
+                      onAnswerClick(
+                        answer,
+                        quizQuestions[activeQuestion].correctAnswer,
+                        index
+                      )
+                    }
+                    key={index}
+                    className={
+                      selectedAnswerIndex === index ? "selected-answer" : null
+                    }
+                  >
+                    {answer}{" "}
+                  </li>
+                ))}
+              </ul>
+            }
+            <button
+              onClick={onClickNext}
+              disabled={selectedAnswerIndex === null}
+            >
+              {activeQuestion === quizQuestions.length - 1 ? "finish" : "next"}
+            </button>
+          </>
+        ) : (
+          <p>loading...</p>
+        )
+      ) : (
         <div className="result">
           <h3>Result</h3>
           <p>
-            Total Question: <span>{questions.length}</span>
+            Total Question: <span>{quizQuestions.length}</span>
           </p>
           <p>
             Total Score:<span> {result.score}</span>
@@ -84,12 +153,11 @@ function onAnswerClick(answer,index){
           <p>
             Wrong Answers:<span> {result.wrongAnswers}</span>
           </p>
+          <button onClick={startNewGame}>New Game</button>
         </div>
       )}
     </div>
-      )
- }
-
-
+  );
+};
 
 export default Quiz;

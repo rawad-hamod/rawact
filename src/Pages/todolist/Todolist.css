@@ -9,16 +9,18 @@
   flex-direction: column;
   
 }
-.todolist-container button{
+.todolist-container .delete-button{
     cursor:pointer;
     border-radius: 5px;
     padding: 5px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     height: 30px;
     line-height: 1.6px;
+ 
+    right:5px;
 }
-.todolist-container button:hover{
+.todolist-container .delete-button:hover{
     opacity: 0.9;
 }
 
@@ -26,7 +28,7 @@
     text-align: center;
 }
 .todolist-container .newtask{
-    width:100%;
+    width:95%;
     padding:5px;
     
 }
@@ -36,8 +38,7 @@
     margin-right: 5px;
     border-radius:5px;
 }
-.todolist-container .newtask button{
-    background-color: green;
+.todolist-container .newtask-button{
     width:50px;
     font-size: larger;
     height: 50px;
@@ -49,12 +50,13 @@
     background-color: aliceblue;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content:space-between;
     align-items: center;
     gap:10px;
     margin-top: 10px;
     padding: 10px;
     max-width: 95%;
+    
     
 }
 .task.text{
@@ -64,14 +66,43 @@
     overflow: wrap;
     max-width: 80%;
     text-wrap: wrap;
+    text-align: left;
     
 }
 .task p.done{
     text-decoration: line-through;
     color: grey;
 }
-.task button{
+.todolist-container .delete-button{
 background-color: rgb(224, 114, 114);
+}
+@media (max-width:375px) {
+    .todolist-container {
+        min-width: 95%;
+        padding: 2px;
+    }
+
+    .text p {
+        font-size: 16px;
+
+    }
+
+    .todolist-container.newtask-button {
+
+        width: 30px;
+        font-size: 15px;
+        height: 30px;
+    }
+
+    .todolist-container .delete-button {
+        font-size: smaller;
+       
+    }
+
+    .todolist-container .newtask input {
+
+        width: 75%;
+    }
 }
 
 

@@ -3,38 +3,33 @@ import { useEffect, useState } from "react";
 import "./Todolist.css";
 
 function Todolist() {
+  function getTasksFromLocalStorage() {
+    let data = localStorage.getItem("tasks");
 
-  function getTasksFromLocalStorage(){
-    let data =localStorage.getItem("tasks");
+    let tasksFromLocalStorage = JSON.parse(data);
 
-    let tasksFromLocalStorage=JSON.parse(data);
-    
-    if(tasksFromLocalStorage){
-      console.log(tasksFromLocalStorage)
-      return tasksFromLocalStorage
+    if (tasksFromLocalStorage) {
+      console.log(tasksFromLocalStorage);
+      return tasksFromLocalStorage;
     }
-    return []
+    return [];
   }
 
   const [tasks, setTasks] = useState(getTasksFromLocalStorage());
   const [newTask, setNewTask] = useState("");
-  
- 
 
-useEffect(()=>{
-localStorage.setItem("tasks",JSON.stringify(tasks));
-
-},[tasks])
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function addTask(newtask) {
     if (newtask !== "") {
       const copyTasks = [...tasks];
       setTasks((tasks) => [
         ...tasks,
-        { id: copyTasks.length + 1, text: newtask, completed: false },
+        { id: copyTasks.length + 1, completed: false, text: newtask },
       ]);
       setNewTask("");
-      
     }
   }
 
@@ -72,10 +67,7 @@ localStorage.setItem("tasks",JSON.stringify(tasks));
             if (e.key === "Enter") addTask(newTask);
           }}
         />
-        <button
-          onClick={() => addTask(newTask)}
-          
-        >
+        <button className="newtask-button" onClick={() => addTask(newTask)}>
           +
         </button>
       </div>
@@ -88,11 +80,16 @@ localStorage.setItem("tasks",JSON.stringify(tasks));
               onChange={() => toggleCompleted(item.id)}
             />
             <div className="text">
-            <p
-              className={item.completed === true ? "done" : null}
-            >{item.text}</p>
+              <p className={item.completed === true ? "done" : null}>
+                {item.text}
+              </p>
             </div>
-            <button onClick={() => deleteTask(item.id)}>delete</button>
+            <button
+              className="delete-button"
+              onClick={() => deleteTask(item.id)}
+            >
+              delete
+            </button>
           </div>
         ))}
       </div>
