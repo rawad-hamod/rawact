@@ -67,9 +67,9 @@ function Todolist() {
             if (e.key === "Enter") addTask(newTask);
           }}
         />
-        <button className="newtask-button" onClick={() => addTask(newTask)}>
+        <p className="newtask-button" onClick={() => addTask(newTask)}>
           +
-        </button>
+        </p>
       </div>
       <div className="tasks">
         {tasks.map((item, index) => (

@@ -93,7 +93,7 @@ setNewGame(true)
   }
 
   return (
-    <div className="quiz-container">
+    <div className="container quiz">
       {!showResullt ? (
         quizQuestions.length > 1 ? (
           <>
@@ -108,9 +108,9 @@ setNewGame(true)
 
             <p>{quizQuestions[activeQuestion].question}</p>
             {
-              <ul>
+              <ul className="answers">
                 {quizQuestions[activeQuestion].answers.map((answer, index) => (
-                  <li
+                  <li 
                     onClick={() =>
                       onAnswerClick(
                         answer,

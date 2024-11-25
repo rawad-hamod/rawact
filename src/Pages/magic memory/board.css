@@ -46,4 +46,13 @@
          border-radius:10px;
          color:white
     }
+    @media(max-width:570px){
+        .new-game-button {
+                width: 40%;
+                font-size: 16px;
+                margin-bottom: 20px;
+                text-align: center;
+                padding: 10px;
+            }
+        }
     

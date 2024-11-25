@@ -29,6 +29,9 @@ h1{
  .newtask{
     width:95%;
     padding:5px;
+    display: flex;
+    flex-direction: row;
+    height:50px;
     
 }
 .newtask input{
@@ -39,12 +42,24 @@ h1{
 }
 .newtask-button{
     width:50px;
-    font-size: larger;
+    font-size: 20px;
     height: 50px;
+    background: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
+    border-radius: 9px;
+    text-align: center;
+    
+
+    color: #ffffff;
+
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 0;
+        
 }
 .tasks{
     padding: 5px;
-    max-width: 90%;
+    width: 90%;
 }
 .task{
     background-color: aliceblue;
@@ -64,7 +79,7 @@ h1{
     flex:1;
     line-height: 1.6px;
     overflow: wrap;
-    max-width: 80%;
+    width: 80%;
     text-wrap: wrap;
     text-align: left;
     
@@ -77,30 +92,20 @@ h1{
 background-color: rgb(224, 114, 114);
 }
 @media (max-width:570px) {
-    .container{
-        min-width: 95%;
-        padding: 2px;
-    }
-
     .text p {
-        font-size: 16px;
-
+        font-size: 16px
     }
-
-    .container.newtask-button {
-
+    .newtask-button {
         width: 30px;
         font-size: 15px;
         height: 30px;
+       
     }
-
     .container .delete-button {
         font-size: smaller;
        
     }
-
     .container .newtask input {
-
         width: 75%;
     }
 }

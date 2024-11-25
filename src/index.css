@@ -10,15 +10,26 @@ button {
     margin-top: 0;
 }
 .container{
-    width: 50%;
- min-height: 500px;
+ width: 50%;
+ height:max-content;
   background: #ffffff;
   border-radius: 4px;
    margin: 100px auto;
-  padding: 30px 60px;
+  padding: 20px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
+@media(max-width:570px){
+    .container{
+        width: 95%;
+     
+       margin: 30px auto;
+      padding: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+}
+}
