@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <BrowserRouter basename="/rawact/">
+      
       <Routes>
         <Route element={<Home />} path="/" />
         <Route element={<Quiz />} path="/quiz" />
@@ -22,7 +22,7 @@ function App() {
 
         <Route element={<Board />} path="/magicmemory" />
       </Routes>
-      </BrowserRouter>
+      
       <Footer />
     </>
   );
