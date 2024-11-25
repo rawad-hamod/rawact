@@ -44,7 +44,7 @@ const Quiz = () => {
     fetchData();
     setNewGame(false)
   }
-  }, []);
+  }, [newGame]);
   
   
 
