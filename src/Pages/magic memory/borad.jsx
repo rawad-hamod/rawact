@@ -80,9 +80,9 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
      
     }
   }, [flippedCards, turns, highScore, currentTurns , ended]);
-
+console.log(cards)
   return (
-    <div className="magic-memory-container">
+    <div className="container">
       <h1>Memory Game</h1>
       <button className="new-game-button" onClick={shuffleCards}>New Game</button>
       <div className="card-grid">
@@ -93,13 +93,14 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
                 <>
                   <Card
                     key={card.id}
-                    card={card}
+                    src={card.src}
                     handleChoice={() => handleChoice(card)}
                     flipped={
                       card === firstChoice ||
                       card === secondChoice ||
                       card.matched
                     }
+
                   />
                 </>
               );
@@ -107,16 +108,19 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
           </>
         ) : (
           <>
+          <div className="results">
             <EndScreen 
             turns={turns}
             bestScore={highScore}
             />
+            </div>
           </>
         )}
       </div>
-      <p>
+    {turns!==0 && <p>
         turns: {turns} bestscore: {highScore}
-      </p>
+      </p>}
+      
     </div>
   );
 }

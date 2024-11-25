@@ -55,7 +55,7 @@ function Todolist() {
   }
 
   return (
-    <div className="todolist-container">
+    <div className="container">
       <h1>To-Do List</h1>
       <div className="newtask">
         <input

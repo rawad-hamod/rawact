@@ -1,7 +1,8 @@
 
 import "./card.css"
 // eslint-disable-next-line react/prop-types
-export default function Card( { card , handleChoice , flipped }) {
+export default function Card({ src, handleChoice , flipped }){
+console.log(src)
     const handleClick=(card)=>{
 handleChoice(card)
 
@@ -10,7 +11,7 @@ handleChoice(card)
     return (
       <div className="card">
         <div className={flipped ? "flipped" : ""}>
-          <img className="front" src={card.src} alt="front" />
+          <img className="front" src={src}  alt="front" />
 
           <img
             className="back"

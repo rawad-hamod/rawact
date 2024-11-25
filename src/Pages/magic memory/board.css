@@ -1,4 +1,4 @@
-.magic-memory-container {
+/* .magic-memory-container {
     width: 500px;
     height: 500px;
     background: #ffffff;
@@ -8,7 +8,8 @@
     display: flex;
     flex-direction: column;
    align-items: center;
-}
+   justify-content: center;
+} */
 
 
 
@@ -22,6 +23,8 @@
         border: none;
         cursor: pointer;
         margin-top: 0;
+        width:40%;
+        margin-bottom: 20px;
         
        
     }
@@ -35,6 +38,12 @@
         height: 75px;
         width: 75px;
     }
-    .front{
-        /* position: absolute; */
+    .results{
+        text-align:center;
+        margin: 20px 60px; 
+         background-color:#B956A1;
+         padding:20px;
+         border-radius:10px;
+         color:white
     }
+    

@@ -9,4 +9,16 @@ button {
     cursor: pointer;
     margin-top: 0;
 }
+.container{
+    width: 50%;
+ min-height: 500px;
+  background: #ffffff;
+  border-radius: 4px;
+   margin: 100px auto;
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
