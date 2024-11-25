@@ -6,14 +6,7 @@ body {
   color: #11052c;
 }
 
-.container {
-width: 500px;
- height: 500px;
-  background: #ffffff;
-  border-radius: 4px;
-   margin: 100px auto;
-  padding: 30px 60px;
-}
+
 
 .active-question-no {
   font-size: 32px;
@@ -49,7 +42,8 @@ ul li {
   padding: 11px;
   margin-top: 15px;
   cursor: pointer;
-  width: 80%;
+  width: 100%;
+  
 }
 
  ul .selected-answer {
@@ -69,7 +63,7 @@ button {
   margin-top: 15px;
 }
 
-.quiz-container button:disabled {
+.quizbutton:disabled {
   background: #e7e8e9;
   color: #9fa3a9;
   cursor: not-allowed;

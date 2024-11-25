@@ -1,5 +1,5 @@
 import {  useEffect, useState } from "react";
-
+import he from "he"
 import "./Quiz.css";
 
 const Quiz = () => {
@@ -97,16 +97,19 @@ setNewGame(true)
       {!showResullt ? (
         quizQuestions.length > 1 ? (
           <>
+          <div>
             <span className="active-question-no">
               {addLeadingZero(activeQuestion + 1)}
             </span>
             <span className="total-question">
               /{addLeadingZero(quizQuestions.length)}
             </span>
+            </div>
 
             <h1>quiz</h1>
 
-            <p>{quizQuestions[activeQuestion].question}</p>
+            <p>{he.decode(quizQuestions[activeQuestion].question)}</p>
+            <div>
             {
               <ul className="answers">
                 {quizQuestions[activeQuestion].answers.map((answer, index) => (
@@ -123,11 +126,12 @@ setNewGame(true)
                       selectedAnswerIndex === index ? "selected-answer" : null
                     }
                   >
-                    {answer}{" "}
+                    {he.decode(answer)}{" "}
                   </li>
                 ))}
               </ul>
             }
+            </div>
             <button
               onClick={onClickNext}
               disabled={selectedAnswerIndex === null}
