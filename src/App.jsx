@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/NAVBAR/Navbar";
 import Quiz from "./Pages/QUIZ/Quiz";
 import Home from "./Pages/Home";
@@ -14,6 +14,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <BrowserRouter basename="/rawact/">
       <Routes>
         <Route element={<Home />} path="/" />
         <Route element={<Quiz />} path="/quiz" />
@@ -21,6 +22,7 @@ function App() {
 
         <Route element={<Board />} path="/magicmemory" />
       </Routes>
+      </BrowserRouter>
       <Footer />
     </>
   );
