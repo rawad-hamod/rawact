@@ -42,7 +42,7 @@ ul li {
   padding: 11px;
   margin-top: 15px;
   cursor: pointer;
-  width: 100%;
+  width: 300px;
   
 }
 
@@ -63,7 +63,7 @@ button {
   margin-top: 15px;
 }
 
-.quizbutton:disabled {
+button:disabled {
   background: #e7e8e9;
   color: #9fa3a9;
   cursor: not-allowed;
@@ -73,9 +73,13 @@ button {
   display: flex;
   justify-content: flex-end;
 }
+.results{
+  height:80%;
+  width:50%
+}
 
 .result h3 {
-  font-size: 24px;
+  font-size: 36px;
   letter-spacing: 1.4px;
   text-align: center;
 }
@@ -85,7 +89,7 @@ button {
   font-weight: 500;
 }
 
-.result p span {
-  color: #800080;
+.results p span {
+  color:aliceblue;
   font-size: 22px;
 }

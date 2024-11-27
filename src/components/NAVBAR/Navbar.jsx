@@ -38,7 +38,7 @@ const Navbar = () => {
             </Link>
           </ul>
         </div>
-        <div className="menu-icon" onClick={clickMenu}>{active? <FaX fontSize={"24px"} /> :<FaList fontSize={"24px"} color="#9E2E92" />}</div>
+        <div className="menu-icon" onClick={clickMenu}>{active? <FaX fontSize={"24px"} color="#9E2E92"/> :<FaList fontSize={"24px"} color="#9E2E92" />}</div>
         </div>
 
         <div className={`${"nav-menu "}${active===true?"active":""}`} >

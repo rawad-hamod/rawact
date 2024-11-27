@@ -2,11 +2,11 @@
   "name": "rawad-simple-quiz",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://rawad-hamod.github.io/react-gh-pages",
+  "homepage": "https://rawad-hamod.github.io/rawact/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",

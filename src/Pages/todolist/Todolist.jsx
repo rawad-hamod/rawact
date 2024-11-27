@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import "./Todolist.css";
+import { FaPlus } from "react-icons/fa";
 
 function Todolist() {
   function getTasksFromLocalStorage() {
@@ -68,7 +69,7 @@ function Todolist() {
           }}
         />
         <p className="newtask-button" onClick={() => addTask(newTask)}>
-          +
+          <FaPlus />
         </p>
       </div>
       <div className="tasks">

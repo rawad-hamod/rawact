@@ -88,8 +88,6 @@ setResult({
   wrongAnswers: 0,
 })
 setNewGame(true)
-
-
   }
 
   return (
@@ -143,8 +141,8 @@ setNewGame(true)
           <p>loading...</p>
         )
       ) : (
-        <div className="result">
-          <h3>Result</h3>
+        <div className="results">
+          <h3>Results</h3>
           <p>
             Total Question: <span>{quizQuestions.length}</span>
           </p>

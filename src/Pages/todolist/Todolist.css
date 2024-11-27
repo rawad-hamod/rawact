@@ -41,20 +41,19 @@ h1{
     border-radius:5px;
 }
 .newtask-button{
-    width:50px;
-    font-size: 20px;
-    height: 50px;
-    background: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
-    border-radius: 9px;
+   
+    font-size: 26px;
+    line-height: 20px;
+   color: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
+    
     text-align: center;
     
 
-    color: #ffffff;
+  
 
-    outline: none;
-    border: none;
+    
     cursor: pointer;
-    margin-top: 0;
+    
         
 }
 .tasks{
