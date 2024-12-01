@@ -3,6 +3,17 @@
     margin: 0;
     padding: 0;
 }
+.container {
+
+    min-height: 60vh;
+    background: #ffffff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+}
 a{
     all:unset;
     cursor: pointer;
@@ -18,27 +29,35 @@ button {
     cursor: pointer;
     margin-top: 0;
 }
-.container{
- width: 50%;
- min-height:60vh;
-  background: #ffffff;
-  border-radius: 4px;
-   margin: 100px auto;
-  padding: 20px 60px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-  gap: 20px;
-}
-@media(max-width:570px){
+
+@media (max-width:600px){
     .container{
         width: 95%;
        margin: 30px auto;
       padding: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; 
+      
 }
 }
+@media (min-width:1200px){
+    .container{
+ width: 50%;
+
+  
+   margin: 100px auto;
+  padding: 20px 60px;
+  
+  
+ 
+}
+      
+}
+@media (max-width:1199px) and (min-width:601px) {
+    .container {
+        width: 70%;
+
+  
+        margin: 50px auto;
+       padding: 20px 20px;
+    }
+}
+

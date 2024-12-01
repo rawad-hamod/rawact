@@ -2,14 +2,20 @@ import { useEffect, useState } from "react";
 import "./board.css";
 import Card from "./card";
 import EndScreen from "./EndScreen";
+import butterfly from "../../../assest/img/butterfly.jpg"
+import forest from "../../../assest/img/forest.jpg"
+import insect from "../../../assest/img/insect.jpg"
+import mountain from "../../../assest/img/mountain.jpg"
+import river from "../../../assest/img/river.jpg"
+import tree from "../../../assest/img/tree.jpg"
 
 const cardImages = [
-  { src: "../../../assest/img/butterfly.jpg", matched: false },
-  { src: "../../../assest/img/forest.jpg", matched: false },
-  { src: "../../../assest/img/insect.jpg", matched: false },
-  { src: "../../../assest/img/mountain.jpg", matched: false },
-  { src: "../../../assest/img/river.jpg", matched: false },
-  { src: "../../../assest/img/tree.jpg", matched: false },
+  { src: butterfly, matched: false },
+  { src: forest, matched: false },
+  { src: insect , matched: false },
+  { src: mountain, matched: false },
+  { src: river, matched: false },
+  { src: tree, matched: false },
 ];
 
 export default function Board() {
@@ -33,6 +39,7 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
     setFlippedCards([]);
     setEnded(false);
   };
+  
 
   //   handle choice
   const handleChoice = (card) => {
@@ -76,7 +83,7 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
       setCurrentTurns(turns);
       setEnded(true);
       setHighScore(Math.min(currentTurns,highScore));
-      setLocalStorageHighScore(localStorage.setItem("bestscore",highScore!==0? JSON.stringify(highScore): JSON.stringify(currentTurns) ));
+      setLocalStorageHighScore(localStorage.setItem("bestscore",highScore!==0? JSON.stringify(highScore): JSON.stringify(highScore) ));
      
     }
   }, [flippedCards, turns, highScore, currentTurns , ended]);

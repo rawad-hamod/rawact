@@ -9,7 +9,7 @@ export default function Home() {
         <h1>
           Welcome to My Web App Portfolio <span className="logo">Rawact</span>
         </h1>
-
+<p> Its is a portfolio web app consists of three pages to practice different react concepts, I hope you find it interesting and never hesitate to send notes and feedback , or questions if you need</p>
         <p>
           <b>1-Quiz App</b>: Put your knowledge to the test with our quiz app!
           Choosen from a variety of topics, answer multiple-choice questions, and

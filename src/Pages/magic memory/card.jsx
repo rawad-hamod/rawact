@@ -1,5 +1,6 @@
 
 import "./card.css"
+import cover from "../../../assest/img/cover.jpg"
 // eslint-disable-next-line react/prop-types
 export default function Card({ src, handleChoice , flipped }){
 console.log(src)
@@ -15,7 +16,7 @@ handleChoice(card)
 
           <img
             className="back"
-            src="../../../assest/img/cover.jpg"
+            src={cover}
             alt="back"
             onClick={handleClick}
           />
