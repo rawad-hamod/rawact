@@ -10,7 +10,6 @@ function Todolist() {
     let tasksFromLocalStorage = JSON.parse(data);
 
     if (tasksFromLocalStorage) {
-      console.log(tasksFromLocalStorage);
       return tasksFromLocalStorage;
     }
     return [];

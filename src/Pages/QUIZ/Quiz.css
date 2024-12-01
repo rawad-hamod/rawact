@@ -43,10 +43,10 @@ ul li {
   margin-top: 15px;
   cursor: pointer;
   width: 300px;
-  
+
 }
 
- ul .selected-answer {
+ul .selected-answer {
   background: #ffd6ff;
   border: 1px solid #800080;
 }
@@ -73,9 +73,11 @@ button:disabled {
   display: flex;
   justify-content: flex-end;
 }
-.results{
-  height:80%;
-  width:50%
+
+.results {
+  height: 80%;
+  width: 50%;
+  background-color: #ffc0cb;
 }
 
 .result h3 {
@@ -90,6 +92,6 @@ button:disabled {
 }
 
 .results p span {
-  color:aliceblue;
+  color: aliceblue;
   font-size: 22px;
 }

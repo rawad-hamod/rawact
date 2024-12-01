@@ -87,7 +87,7 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
      
     }
   }, [flippedCards, turns, highScore, currentTurns , ended]);
-console.log(cards)
+
   return (
     <div className="container">
       <h1>Memory Game</h1>

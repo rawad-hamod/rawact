@@ -1,58 +1,49 @@
-/* .magic-memory-container {
-    width: 500px;
-    height: 500px;
-    background: #ffffff;
-    border-radius: 4px;
-    margin: 100px auto;
-    padding: 30px 60px;
-    display: flex;
-    flex-direction: column;
-   align-items: center;
-   justify-content: center;
-} */
 
-
-
-.new-game-button{
+.new-game-button {
     background: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
-        border-radius: 9px;
-        font-size: 18px;
-        color: #ffffff;
-        padding: 10px 42px;
-        outline: none;
-        border: none;
-        cursor: pointer;
-        margin-top: 0;
-        width:200px;
+    border-radius: 9px;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 10px 42px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 0;
+    width: 200px;
+    margin-bottom: 20px;
+
+
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 20px;
+    margin: 10px auto;
+}
+
+.card img {
+    height: 75px;
+    width: 75px;
+}
+
+.results {
+    text-align: center;
+    margin: 20px 300px;
+    background-color: #cc2fa7;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    width:250px;
+
+}
+
+@media(max-width:570px) {
+    .new-game-button {
+        width: 200px;
+        font-size: 16px;
         margin-bottom: 20px;
-        
-       
+        text-align: center;
+        padding: 10px;
     }
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px 20px;
-            margin: 10px auto;
-        }
-    .card img{
-        height: 75px;
-        width: 75px;
-    }
-    .results{
-        text-align:center;
-        margin: 20px 60px; 
-         background-color:#B956A1;
-         padding:20px;
-         border-radius:10px;
-         color:white
-    }
-    @media(max-width:570px){
-        .new-game-button {
-                width: 200px;
-                font-size: 16px;
-                margin-bottom: 20px;
-                text-align: center;
-                padding: 10px;
-            }
-        }
-    
+}

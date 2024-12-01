@@ -3,13 +3,8 @@ import Navbar from "./components/NAVBAR/Navbar";
 import Quiz from "./Pages/QUIZ/Quiz";
 import Home from "./Pages/Home/Home";
 import Todolist from "./Pages/todolist/Todolist";
-
-import "./App.css";
-
 import Board from "./Pages/magic memory/borad";
-
 import Footer from "./components/footer/Footer";
-
 function App() {
   return (
     <>

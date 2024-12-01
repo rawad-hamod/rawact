@@ -1,114 +1,113 @@
-/* .todolist-container{
- width: 50%;
- min-height: 500px;
-  background: #ffffff;
-  border-radius: 4px;
-   margin: 100px auto;
-  padding: 30px 60px;
-  display: flex;
-  flex-direction: column;
-} */
-.delete-button{
-    cursor:pointer;
+.delete-button {
+    cursor: pointer;
     border-radius: 5px;
     padding: 5px;
     font-size: 14px;
     font-weight: bold;
     height: 30px;
     line-height: 1.6px;
- 
-    right:5px;
+
+    right: 5px;
 }
-.delete-button:hover{
+
+.delete-button:hover {
     opacity: 0.9;
 }
 
-h1{
+h1 {
     text-align: center;
 }
- .newtask{
-    width:95%;
-    padding:5px;
+
+.newtask {
+    width: 95%;
+    padding: 5px;
     display: flex;
     flex-direction: row;
-    height:50px;
-    
+    height: 50px;
+
 }
-.newtask input{
-    padding:10px;
-    width:80%;
+
+.newtask input {
+    padding: 10px;
+    width: 80%;
     margin-right: 5px;
-    border-radius:5px;
+    border-radius: 5px;
 }
-.newtask-button{
-   
+
+.newtask-button {
+
     font-size: 26px;
     line-height: 20px;
-   color: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
-    
+    color: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
+
     text-align: center;
-    
 
-  
 
-    
+
+
+
     cursor: pointer;
-    
-        
+
+
 }
-.tasks{
+
+.tasks {
     padding: 5px;
     width: 90%;
 }
-.task{
+
+.task {
     background-color: aliceblue;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
-    gap:10px;
+    gap: 10px;
     margin-top: 10px;
     padding: 10px;
-   
-    
-    
+
+
+
 }
-.task.text{
+
+.task.text {
     font-size: 16px;
-    flex:1;
+    flex: 1;
     line-height: 1.6px;
     overflow: wrap;
     width: 80%;
     text-wrap: wrap;
     text-align: left;
-    
+
 }
-.task p.done{
+
+.task p.done {
     text-decoration: line-through;
     color: grey;
 }
- .delete-button{
-background-color: rgb(224, 114, 114);
+
+.delete-button {
+    background-color: rgb(224, 114, 114);
 }
+
 @media (max-width:570px) {
     .text p {
         font-size: 16px
     }
+
     .newtask-button {
         width: 30px;
         font-size: 15px;
         height: 30px;
-       
+
     }
+
     .container .delete-button {
         font-size: smaller;
-       
+
     }
+
     .container .newtask input {
         width: 75%;
     }
 }
-
-
-
-

@@ -1,14 +1,13 @@
-import {  useEffect, useState } from "react";
-import he from "he"
+import { useEffect, useState } from "react";
+import he from "he";
 import "./Quiz.css";
 
 const Quiz = () => {
-
-  const[newGame , setNewGame]=useState(true)
+  const [newGame, setNewGame] = useState(true);
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState(null);
- 
+
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [showResullt, setShowResult] = useState(false);
   const [result, setResult] = useState({
@@ -17,36 +16,31 @@ const Quiz = () => {
     wrongAnswers: 0,
   });
 
-  
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("https://opentdb.com/api.php?amount=10"); 
+        const response = await fetch("https://opentdb.com/api.php?amount=10");
         if (!response.ok) {
-          throw new Error('Failed to fetch quiz data');
+          throw new Error("Failed to fetch quiz data");
         }
         const data = await response.json();
-        
-        
+
         const filteredData = data.results.map((item) => ({
           question: item.question,
           correctAnswer: item.correct_answer,
           incorrectAnswers: item.incorrect_answers,
           answers: item.incorrect_answers.concat(item.correct_answer).sort(),
-         
         }));
         setQuizQuestions(filteredData);
       } catch (error) {
         console.log(error);
       }
     };
-    if(newGame){
-    fetchData();
-    setNewGame(false)
-  }
+    if (newGame) {
+      fetchData();
+      setNewGame(false);
+    }
   }, [newGame]);
-  
-  
 
   const addLeadingZero = (number) => (number > 9 ? number : `0${number}`);
 
@@ -80,14 +74,14 @@ const Quiz = () => {
       setSelectedAnswer(false);
     }
   }
-  function startNewGame(){
-setShowResult(false);
-setResult({
-  score: 0,
-  correctAnswers: 0,
-  wrongAnswers: 0,
-})
-setNewGame(true)
+  function startNewGame() {
+    setShowResult(false);
+    setResult({
+      score: 0,
+      correctAnswers: 0,
+      wrongAnswers: 0,
+    });
+    setNewGame(true);
   }
 
   return (
@@ -95,40 +89,44 @@ setNewGame(true)
       {!showResullt ? (
         quizQuestions.length > 1 ? (
           <>
-          <div>
-            <span className="active-question-no">
-              {addLeadingZero(activeQuestion + 1)}
-            </span>
-            <span className="total-question">
-              /{addLeadingZero(quizQuestions.length)}
-            </span>
+            <div>
+              <span className="active-question-no">
+                {addLeadingZero(activeQuestion + 1)}
+              </span>
+              <span className="total-question">
+                /{addLeadingZero(quizQuestions.length)}
+              </span>
             </div>
 
             <h1>quiz</h1>
 
             <p>{he.decode(quizQuestions[activeQuestion].question)}</p>
             <div>
-            {
-              <ul className="answers">
-                {quizQuestions[activeQuestion].answers.map((answer, index) => (
-                  <li 
-                    onClick={() =>
-                      onAnswerClick(
-                        answer,
-                        quizQuestions[activeQuestion].correctAnswer,
-                        index
-                      )
-                    }
-                    key={index}
-                    className={
-                      selectedAnswerIndex === index ? "selected-answer" : null
-                    }
-                  >
-                    {he.decode(answer)}{" "}
-                  </li>
-                ))}
-              </ul>
-            }
+              {
+                <ul className="answers">
+                  {quizQuestions[activeQuestion].answers.map(
+                    (answer, index) => (
+                      <li
+                        onClick={() =>
+                          onAnswerClick(
+                            answer,
+                            quizQuestions[activeQuestion].correctAnswer,
+                            index
+                          )
+                        }
+                        key={index}
+                        className={
+                          selectedAnswerIndex === index
+                            ? "selected-answer"
+                            : null
+                        }
+                      >
+                        {he.decode(answer)}{" "}
+                      </li>
+                    )
+                  )}
+                </ul>
+              }
             </div>
             <button
               onClick={onClickNext}

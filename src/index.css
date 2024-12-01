@@ -1,8 +1,9 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
 .container {
 
     min-height: 60vh;
@@ -14,10 +15,12 @@
     gap: 20px;
 
 }
-a{
-    all:unset;
+
+a {
+    all: unset;
     cursor: pointer;
 }
+
 button {
     background: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
     border-radius: 9px;
@@ -30,34 +33,35 @@ button {
     margin-top: 0;
 }
 
-@media (max-width:600px){
-    .container{
+@media (max-width:600px) {
+    .container {
         width: 95%;
-       margin: 30px auto;
-      padding: 10px;
-      
-}
-}
-@media (min-width:1200px){
-    .container{
- width: 50%;
+        margin: 30px auto;
+        padding: 10px;
 
-  
-   margin: 100px auto;
-  padding: 20px 60px;
-  
-  
- 
+    }
 }
-      
+
+@media (min-width:1200px) {
+    .container {
+        width: 50%;
+
+
+        margin: 100px auto;
+        padding: 20px 60px;
+
+
+
+    }
+
 }
+
 @media (max-width:1199px) and (min-width:601px) {
     .container {
         width: 70%;
 
-  
+
         margin: 50px auto;
-       padding: 20px 20px;
+        padding: 20px 20px;
     }
 }
-
