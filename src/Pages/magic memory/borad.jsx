@@ -28,7 +28,7 @@ export default function Board() {
   const [ended, setEnded] = useState(false);
   const [currentTurns, setCurrentTurns] = useState(0);
   
-const[highScore,setHighScore]=useState(JSON.parse(localStorage.getItem("bestscore")) )
+const[highScore,setHighScore]=useState(JSON.parse(localStorage.getItem("bestscore")))
   // shuffle cards
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -82,7 +82,7 @@ const[highScore,setHighScore]=useState(JSON.parse(localStorage.getItem("bestscor
     if (flippedCards.length === cardImages.length * 2) {
       setCurrentTurns(turns);
       setEnded(true);
-      setHighScore(Math.min(currentTurns,highScore));
+      setHighScore(highScore !==0 ? Math.min(currentTurns,highScore) : currentTurns);
       
      
     }

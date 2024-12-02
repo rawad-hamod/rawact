@@ -97,6 +97,7 @@
   border-radius: 0px 0px 10px 10px;
   visibility: hidden;
   transition: 0.3s ease;
+  z-index: 3;
 }
 
 .active {
