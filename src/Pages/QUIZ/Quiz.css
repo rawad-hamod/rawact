@@ -74,10 +74,16 @@ button:disabled {
   justify-content: flex-end;
 }
 
-.results {
+.quiz-results {
   height: 80%;
   width: 50%;
-  background-color: #ffc0cb;
+  background-color:#CC73AD;
+  display: flex;
+  flex-direction: column;
+  padding:20px;
+  margin: 30px auto;
+  border-radius: 15px;
+  color: aliceblue;
 }
 
 .result h3 {
@@ -91,7 +97,6 @@ button:disabled {
   font-weight: 500;
 }
 
-.results p span {
-  color: aliceblue;
+.quiz-results p span {
   font-size: 22px;
 }

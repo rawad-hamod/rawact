@@ -29,12 +29,16 @@
 
 .results {
     text-align: center;
-    margin: 20px 300px;
-    background-color: #cc2fa7;
+    margin: 20px auto;
+    background-color:#CC2FA7;
     padding: 20px;
     border-radius: 10px;
     color: white;
-    width:250px;
+    
+    display: flex;
+    
+   
+    margin: 10px auto;
 
 }
 

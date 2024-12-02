@@ -139,7 +139,8 @@ const Quiz = () => {
           <p>loading...</p>
         )
       ) : (
-        <div className="results">
+        <>
+        <div className="quiz-results fade-animation">
           <h3>Results</h3>
           <p>
             Total Question: <span>{quizQuestions.length}</span>
@@ -153,8 +154,9 @@ const Quiz = () => {
           <p>
             Wrong Answers:<span> {result.wrongAnswers}</span>
           </p>
-          <button onClick={startNewGame}>New Game</button>
         </div>
+      <button onClick={startNewGame}>New Game</button>
+      </>
       )}
     </div>
   );

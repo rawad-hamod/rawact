@@ -27,8 +27,8 @@ export default function Board() {
   const [flippedCards, setFlippedCards] = useState([]);
   const [ended, setEnded] = useState(false);
   const [currentTurns, setCurrentTurns] = useState(0);
-  const[localStorageHighScore, setLocalStorageHighScore] =useState(JSON.parse(localStorage.getItem("bestscore")) );
-const[highScore,setHighScore]=useState(localStorageHighScore)
+  
+const[highScore,setHighScore]=useState(JSON.parse(localStorage.getItem("bestscore")) )
   // shuffle cards
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
@@ -83,7 +83,7 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
       setCurrentTurns(turns);
       setEnded(true);
       setHighScore(Math.min(currentTurns,highScore));
-      setLocalStorageHighScore(localStorage.setItem("bestscore",highScore!==0? JSON.stringify(highScore): JSON.stringify(highScore) ));
+      
      
     }
   }, [flippedCards, turns, highScore, currentTurns , ended]);
@@ -92,9 +92,9 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
     <div className="container">
       <h1>Memory Game</h1>
       <button className="new-game-button" onClick={shuffleCards}>New Game</button>
-      <div className="card-grid">
         {ended === false ? (
-          <>
+      <div className="card-grid">
+          
             {cards.map((card) => {
               return (
                 <>
@@ -112,7 +112,8 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
                 </>
               );
             })}
-          </>
+            </div>
+         
         ) : (
           <>
           <div className="results">
@@ -123,9 +124,10 @@ const[highScore,setHighScore]=useState(localStorageHighScore)
             </div>
           </>
         )}
-      </div>
+     
+      
     {turns!==0 && <p>
-        turns: {turns} bestscore: {highScore}
+        turns: {turns    }    bestscore: {highScore}
       </p>}
       
     </div>
